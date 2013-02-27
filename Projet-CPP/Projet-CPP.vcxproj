@@ -77,16 +77,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Element.cpp" />
+    <ClCompile Include="Humain.cpp" />
     <ClCompile Include="Mobile.cpp" />
     <ClCompile Include="Monde.cpp" />
+    <ClCompile Include="Nourriture.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="src\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />
+    <ClInclude Include="Humain.h" />
     <ClInclude Include="Mobile.h" />
     <ClInclude Include="Monde.h" />
+    <ClInclude Include="Nourriture.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Ressource.h" />
   </ItemGroup>
