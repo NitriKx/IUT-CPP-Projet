@@ -1,12 +1,13 @@
 #include "Position.h"
 
 
-Position::Position(void)
+Position::Position(void) : x(0), y(0)
 {
-	this->x = 0;
-	this->y = 0;
 }
 
+Position::Position(int x, int y) : x(x), y(y)
+{
+}
 
 Position::~Position(void)
 {
@@ -71,3 +72,6 @@ void Position::leverErreurMauvaiseCoordonnees(int x, int y)
 
 	throw logic_error(msg);
 }
+
+
+

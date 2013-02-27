@@ -12,6 +12,7 @@ private:
 	int y;
 public:
 	Position(void);
+	Position(int x, int y);
 	~Position(void);
 	
 	bool isCoordonneesValide(int x, int y);
@@ -40,5 +41,6 @@ public:
 		Lève une exception indiquant que les coordonnées données sont incompatibles.
 	**/
 	void leverErreurMauvaiseCoordonnees(int x, int y);
+	
 };
 
