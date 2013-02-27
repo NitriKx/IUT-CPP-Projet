@@ -77,14 +77,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Element.cpp" />
+    <ClCompile Include="Mobile.cpp" />
     <ClCompile Include="Monde.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="src\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />
+    <ClInclude Include="Mobile.h" />
     <ClInclude Include="Monde.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Ressource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
