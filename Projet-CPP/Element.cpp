@@ -75,6 +75,10 @@ void Element::setColor(Color _color)
 {
 	this->couleur=_color;
 }
+void Element::setQtRessource(unsigned int _qtRessource)
+{
+	this->qtRessource=_qtRessource;
+}
 
 char Element::getElement(void) const
 {
@@ -103,4 +107,8 @@ unsigned int Element::getVision(void) const
 Color Element::getColor(void) const
 {
 	return this->couleur;
+}
+unsigned int Element::getQtRessource(void) const
+{
+	return this->qtRessource;
 }

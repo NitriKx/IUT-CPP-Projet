@@ -19,9 +19,9 @@ private:
 	unsigned int vitesseDep; //vitesse de déplacement d'un élément
 	unsigned int vision; //vision d'un élement (une/deux/trois cases....)
 	Color couleur; //couleur associée à l'element
+	unsigned int qtRessource; //quantité de ressource pour une ressource / qt enr eserve pour le peuple
+
 	
-
-
 public:
 	Element(void);
 	Element::Element(string nom, Position pos);
@@ -43,7 +43,7 @@ public:
 	void setVitesseDep(unsigned int _vitesseDep);
 	void setVision(unsigned int _vision);
 	void setColor(Color _color);
-
+	void setQtRessource(unsigned int _qtRessource);
 
 		
 	//getteurs
@@ -56,8 +56,7 @@ public:
 	unsigned int getVitesseDep(void) const;
 	unsigned int getVision(void) const;
 	Color getColor(void) const;
-
+	unsigned int getQtRessource(void) const;
 
 
 };
-
