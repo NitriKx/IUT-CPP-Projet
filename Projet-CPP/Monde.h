@@ -19,6 +19,6 @@ public:
 	map& getCarte();
 
 	bool supprimerElement(Element*) ;
-
+	void ajouterElement(Position pos, Element* e);
 };
 
