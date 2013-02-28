@@ -3,23 +3,61 @@
 #include <iostream>
 #include <string>
 #include "Position.h"
+#include "conio.h"
+#include "Color.h"
+
 
 class Element
 {
 private:
-	Position pos;
-	string nom;
+	Position pos; //variable position de l'element
+	string nom; //nom de l'element
+	char element; //lettre associé à un élément
+	unsigned int ptVie; //point de vie restant d'un élément
+	unsigned int espVie; //esperance de vie d'un élément
+	unsigned int forceCombat; //force au combat d'un élement
+	unsigned int vitesseDep; //vitesse de déplacement d'un élément
+	unsigned int vision; //vision d'un élement (une/deux/trois cases....)
+	Color couleur; //couleur associée à l'element
+	
+
+
 public:
 	Element(void);
 	Element::Element(string nom, Position pos);
 	~Element(void);
 	
 
-	Position getPosition(void);
-	string getNom(void);
+
+
+	Element(string nom, Position pos);
+
+	//setteurs
 	void setNom(string nom);
 	void setPosition(Position pos);
 	void setPostion(int x, int y);
-	Element(string nom, Position pos);
+	void setElement(char _element);
+	void setPtVie(unsigned int _ptVie);
+	void setEspVie(unsigned int _espVie);
+	void setForceCombat(unsigned int _forceCombat);
+	void setVitesseDep(unsigned int _vitesseDep);
+	void setVision(unsigned int _vision);
+	void setColor(Color _color);
+
+
+		
+	//getteurs
+	Position getPosition(void) const;
+	string getNom(void) const;
+	char getElement(void) const;
+	unsigned int getPtVie(void);
+	unsigned int getEspVie(void) const;
+	unsigned int getForceCombat(void) const;
+	unsigned int getVitesseDep(void) const;
+	unsigned int getVision(void) const;
+	Color getColor(void) const;
+
+
+
 };
 
