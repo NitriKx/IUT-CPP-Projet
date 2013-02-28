@@ -14,10 +14,7 @@
 
 *.opensdf
 *.sdf
-<<<<<<< HEAD
 *.suo
-=======
 
 Debug/
 Release/
->>>>>>> 7bc57fbe872d1b094d88662cb54062dd0908acdd
