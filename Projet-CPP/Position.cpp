@@ -5,8 +5,14 @@ Position::Position(void) : x(0), y(0)
 {
 }
 
-Position::Position(int x, int y) : x(x), y(y)
+Position::Position(int x, int y)
 {
+	if(isCoordonneesValide(x,y)) {
+		this->x = x;
+		this->y = y;
+	} else {
+		leverErreurMauvaiseCoordonnees(x,y);
+	}
 }
 
 Position::~Position(void)
@@ -73,5 +79,7 @@ void Position::leverErreurMauvaiseCoordonnees(int x, int y)
 	throw logic_error(msg);
 }
 
-
-
+bool Position::operator<(Position pos)
+{
+	return (this->x < pos.getX() || x == pos.getX() && this->y < pos.getY());
+}
