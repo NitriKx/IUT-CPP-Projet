@@ -83,3 +83,7 @@ bool Position::operator<(Position pos)
 {
 	return (this->x < pos.getX() || x == pos.getX() && this->y < pos.getY());
 }
+
+bool Position::operator==(Position pos) {
+	return this->getX() == pos.getX() && this->getY() == pos.getY();
+}
