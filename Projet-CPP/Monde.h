@@ -17,5 +17,8 @@ public:
 	~Monde(void);
 
 	map& getCarte();
+
+	bool supprimerElement(Element*) ;
+
 };
 

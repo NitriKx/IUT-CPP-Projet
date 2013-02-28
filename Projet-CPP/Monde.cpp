@@ -13,3 +13,7 @@ Monde::~Monde(void)
 map& Monde::getCarte() {
 	return carte;
 }
+
+bool Monde::supprimerElement(Element* e) {
+	return this->carte.erase(e->getPosition()) > 0;
+}
