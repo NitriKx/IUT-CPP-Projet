@@ -76,7 +76,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="AffichageMap.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Humain.cpp" />
     <ClCompile Include="Mobile.cpp" />
@@ -87,7 +88,8 @@
     <ClCompile Include="src\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Color.h" />
+    <ClInclude Include="AffichageMap.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="Humain.h" />
     <ClInclude Include="Mobile.h" />
