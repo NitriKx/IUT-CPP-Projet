@@ -8,7 +8,7 @@
 typedef std::tr1::unordered_map<Position, Element*> map;
 
 class Monde :
-	public vector<Element>
+	public vector<Element*>
 {
 private:
 	map carte;
