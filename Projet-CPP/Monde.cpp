@@ -1,7 +1,7 @@
 #include "Monde.h"
 
 
-Monde::Monde(void) : vector<Element>()
+Monde::Monde(void) : vector<Element*>()
 {
 }
 
@@ -19,5 +19,6 @@ bool Monde::supprimerElement(Element* e) {
 }
 
 void Monde::ajouterElement(Position pos, Element* e) {
+	this->push_back(e);
 	this->carte[pos] = e;
 }
