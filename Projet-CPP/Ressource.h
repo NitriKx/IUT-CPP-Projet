@@ -6,5 +6,7 @@ class Ressource :
 public:
 	Ressource(void);
 	~Ressource(void);
+	static const char affich = 'R';//caractère d'affichage
+
 };
 

@@ -11,5 +11,8 @@ public:
 	~Humain(void);
 	int getVie()const;
 	void setVie(const int _vie);
+
+	static const char affich = 'H';//caractère d'affichage
+
 };
 

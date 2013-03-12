@@ -22,7 +22,6 @@ private:
 	unsigned int vision; //vision d'un élement (une/deux/trois cases....)
 	Color couleur; //couleur associée à l'element
 	unsigned int qtRessource; //quantité de ressource pour une ressource / qt enr eserve pour le peuple
-	static char affich;//caractère d'affichage
 
 	
 public:
@@ -30,6 +29,8 @@ public:
 	Element::Element(string nom, Position pos);
 	~Element(void);
 	
+	static const char affich = 'E';//caractère d'affichage
+
 
 	//setteurs
 	void setNom(string nom);
@@ -43,8 +44,6 @@ public:
 	void setVision(unsigned int _vision);
 	void setColor(Color _color);
 	void setQtRessource(unsigned int _qtRessource);
-	void setAffich(const char _affich);
-
 		
 	//getteurs
 	Position getPosition(void) const;
@@ -57,7 +56,6 @@ public:
 	unsigned int getVision(void) const;
 	Color getColor(void) const;
 	unsigned int getQtRessource(void) const;
-	char getAffich(void)const;
 
 
 

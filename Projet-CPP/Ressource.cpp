@@ -3,7 +3,6 @@
 
 Ressource::Ressource(void)
 {
-	setAffich('R');
 }
 
 

@@ -24,7 +24,7 @@ void AffichageMap::affichageMap()
 	for(j=0;j<(*monMonde).size();j++)
 	{
 		gotoxy(monMonde->at(j)->getPosition().getX(),monMonde->at(j)->getPosition().getY());
-		cout << monMonde->at(j)->getAffich();
+		cout << monMonde->at(j)->affich;
 	}
 		
 }

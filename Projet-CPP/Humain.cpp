@@ -3,7 +3,6 @@
 
 Humain::Humain(void) : Mobile(3,3), vie(100)
 {
-	setAffich('H');
 }
 
 
