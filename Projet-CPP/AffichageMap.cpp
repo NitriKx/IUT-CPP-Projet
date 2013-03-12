@@ -19,12 +19,14 @@ AffichageMap::~AffichageMap(void)
 
 void AffichageMap::affichageMap()
 {
-	int j;
+	unsigned int j;
+	Element * elem;
 	
 	
 	for(j=0;j<(*monMonde).size();j++)
 	{
-		(*monMonde).at(j).Element::getPosition().Position::getX();
+		gotoxy(monMonde->at(j)->getPosition().getX(),monMonde->at(j)->getPosition().getY());
+		cout << monMonde->at(j)->getAffich();
 	}
 		
 }

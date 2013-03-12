@@ -22,14 +22,14 @@ private:
 	unsigned int vision; //vision d'un élement (une/deux/trois cases....)
 	Color couleur; //couleur associée à l'element
 	unsigned int qtRessource; //quantité de ressource pour une ressource / qt enr eserve pour le peuple
+	static char affich;//caractère d'affichage
 
 	
 public:
 	Element(void);
 	Element::Element(string nom, Position pos);
 	~Element(void);
-	//caractère d'affichage
-	char affich;
+	
 
 	//setteurs
 	void setNom(string nom);
