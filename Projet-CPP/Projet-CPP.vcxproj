@@ -77,7 +77,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AffichageMap.cpp" />
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="econio.cpp" />
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="Humain.cpp" />
     <ClCompile Include="Mobile.cpp" />
@@ -89,7 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AffichageMap.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="econio.h" />
     <ClInclude Include="Element.h" />
     <ClInclude Include="Humain.h" />
     <ClInclude Include="Mobile.h" />
