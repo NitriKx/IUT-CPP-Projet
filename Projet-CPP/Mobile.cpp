@@ -5,7 +5,7 @@ Mobile::Mobile(void)
 {
 }
 
-Mobile::Mobile(const int _vitesse, const int _vision) : Element(),vitesse(_vitesse), vision(_vision)
+Mobile::Mobile(const int _vitesse, const int _vision) : Element(),,vitesse(_vitesse), vision(_vision)
 {
 }
 
