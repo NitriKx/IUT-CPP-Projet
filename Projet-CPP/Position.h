@@ -42,7 +42,8 @@ public:
 	**/
 	void leverErreurMauvaiseCoordonnees(int x, int y);
 	
-	bool operator<(Position pos);
+	bool operator<(const Position &pos) const;
+
 	bool operator==(Position pos);
 
 };

@@ -7,6 +7,8 @@
 #include "Color.h"
 
 
+class Monde;
+
 class Element
 {
 private:
@@ -24,13 +26,8 @@ private:
 	
 public:
 	Element(void);
-	Element::Element(string nom, Position pos);
-	~Element(void);
-	
-
-
-
 	Element(string nom, Position pos);
+	~Element(void);
 
 	//setteurs
 	void setNom(string nom);
@@ -60,3 +57,5 @@ public:
 
 
 };
+
+#include "Monde.h"

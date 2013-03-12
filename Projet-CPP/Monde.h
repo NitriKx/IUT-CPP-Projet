@@ -1,22 +1,22 @@
 #pragma once
 
 #include <vector>
-#include <unordered_map>
+#include <map>
 #include "Element.h"
 #include "Position.h"
 
-typedef std::tr1::unordered_map<Position, Element*> map;
+using namespace std;
 
 class Monde :
 	public vector<Element*>
 {
 private:
-	map carte;
+	map<Position, unsigned int> carte;
 public:
 	Monde(void);
 	~Monde(void);
 
-	map& getCarte();
+	map<Position, unsigned int>& getCarte();
 
 	bool supprimerElement(Element*) ;
 	void ajouterElement(Position pos, Element* e);

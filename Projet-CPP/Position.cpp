@@ -79,9 +79,9 @@ void Position::leverErreurMauvaiseCoordonnees(int x, int y)
 	throw logic_error(msg);
 }
 
-bool Position::operator<(Position pos)
+bool Position::operator<(const Position &pos) const
 {
-	return (this->x < pos.getX() || x == pos.getX() && this->y < pos.getY());
+	return (this->x < pos.x || x == pos.y && this->y < pos.y);
 }
 
 bool Position::operator==(Position pos) {

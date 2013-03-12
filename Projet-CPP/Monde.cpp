@@ -10,7 +10,7 @@ Monde::~Monde(void)
 {
 }
 
-map& Monde::getCarte() {
+map<Position, unsigned int>& Monde::getCarte() {
 	return carte;
 }
 
@@ -20,5 +20,19 @@ bool Monde::supprimerElement(Element* e) {
 
 void Monde::ajouterElement(Position pos, Element* e) {
 	this->push_back(e);
-	this->carte[pos] = e;
+
+	// On récupère la position de l'élément
+	int id = -1;
+	for(unsigned int i = 0 ; i < this->size() ; i++) {
+		if(this->at(i) == e) {
+			id=i;
+			break;
+		}
+	}
+
+	if(id < 0)
+		throw new string("L'element placé n'existe pas dans le monde.");
+
+	this->carte[pos] = id;
+	e->setPosition(pos);
 }
