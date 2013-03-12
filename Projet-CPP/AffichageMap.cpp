@@ -20,8 +20,6 @@ AffichageMap::~AffichageMap(void)
 void AffichageMap::affichageMap()
 {
 	unsigned int j;
-	Element * elem;
-	
 	
 	for(j=0;j<(*monMonde).size();j++)
 	{
