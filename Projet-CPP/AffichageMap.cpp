@@ -1,13 +1,15 @@
 #include "AffichageMap.h"
 #include "Config.h"
+#include "econio.h"
 
 
 AffichageMap::AffichageMap(void)
 {
 }
 
-AffichageMap::AffichageMap(const Monde * _monde): monMonde(*_monde)
+AffichageMap::AffichageMap( Monde * _monde)
 {
+	monMonde = _monde;
 }
 
 
@@ -19,9 +21,10 @@ void AffichageMap::affichageMap()
 {
 	int j;
 	
-	for(j=0;j<monMonde.size();j++)
+	
+	for(j=0;j<(*monMonde).size();j++)
 	{
-            
+		(*monMonde).at(j).Element::getPosition().Position::getX();
 	}
 		
 }

@@ -26,8 +26,10 @@ private:
 	
 public:
 	Element(void);
-	Element(string nom, Position pos);
+	Element::Element(string nom, Position pos);
 	~Element(void);
+	//caractère d'affichage
+	char affich;
 
 	//setteurs
 	void setNom(string nom);
@@ -41,6 +43,7 @@ public:
 	void setVision(unsigned int _vision);
 	void setColor(Color _color);
 	void setQtRessource(unsigned int _qtRessource);
+	void setAffich(const char _affich);
 
 		
 	//getteurs
@@ -54,6 +57,8 @@ public:
 	unsigned int getVision(void) const;
 	Color getColor(void) const;
 	unsigned int getQtRessource(void) const;
+	char getAffich(void)const;
+
 
 
 };
