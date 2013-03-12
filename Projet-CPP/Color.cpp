@@ -1,5 +1,9 @@
 #include "Color.h"
 
+Color::Color()
+{
+}
+
 Color::Color(unsigned char red, unsigned char green, unsigned char blue) : 
   color_ (RGB(red, green, blue)) {
 }
