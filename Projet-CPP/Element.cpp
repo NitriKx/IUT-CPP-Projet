@@ -79,6 +79,10 @@ void Element::setQtRessource(unsigned int _qtRessource)
 {
 	this->qtRessource=_qtRessource;
 }
+void Element::setAffich(const char _affich)
+{
+	this->affich = _affich;
+}
 
 char Element::getElement(void) const
 {
@@ -111,4 +115,9 @@ Color Element::getColor(void) const
 unsigned int Element::getQtRessource(void) const
 {
 	return this->qtRessource;
+}
+
+char Element::getAffich(void)const
+{
+	return this->affich;
 }
