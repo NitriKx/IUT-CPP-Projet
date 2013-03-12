@@ -3,8 +3,6 @@
 
 Config::Config(void)
 {
-	largeur = 0;
-	hauteur = 0;
 }
 
 
