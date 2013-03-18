@@ -11,13 +11,24 @@ private :
 	unsigned int vision; // Vision d'un élement (une/deux/trois cases....)
 
 public:
+
+	//
+	// CONSTRCUTEURS
+	//
+
 	Mobile(void);
 	Mobile(string nom, Position pos, unsigned int _ptVie, unsigned int _espVie, unsigned int _forceCombat, unsigned int _vitesse, unsigned int _vision);
 	~Mobile(void);
 
+	//
+	// METHODES
+	//
+
 	void bouge(void);
 
+	//
 	// GETTERS ET SETTERS
+	//
 
 	unsigned int getVitesse()const;
 	unsigned int getPtVie(void);
