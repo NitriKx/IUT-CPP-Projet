@@ -6,7 +6,7 @@ class Mobile :
 private :
 	unsigned int ptVie; // Point de vie restant d'un élément
 	unsigned int espVie; // Esperance de vie d'un élément
-	unsigned int forceCombat; // Gorce au combat d'un élement
+	unsigned int forceCombat; // Force au combat d'un élement
 	unsigned int vitesse; // Vitesse de déplacement d'un élément
 	unsigned int vision; // Vision d'un élement (une/deux/trois cases....)
 
@@ -16,6 +16,8 @@ public:
 	~Mobile(void);
 
 	void bouge(void);
+
+	// GETTERS ET SETTERS
 
 	unsigned int getVitesse()const;
 	unsigned int getPtVie(void);

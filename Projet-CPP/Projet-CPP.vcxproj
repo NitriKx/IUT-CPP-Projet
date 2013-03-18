@@ -10,6 +10,33 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AffichageMap.cpp" />
+    <ClCompile Include="src\Color.cpp" />
+    <ClCompile Include="src\Config.cpp" />
+    <ClCompile Include="src\econio.cpp" />
+    <ClCompile Include="src\Element.cpp" />
+    <ClCompile Include="src\EntryPoint.cpp" />
+    <ClCompile Include="src\Humain.cpp" />
+    <ClCompile Include="src\Mobile.cpp" />
+    <ClCompile Include="src\Monde.cpp" />
+    <ClCompile Include="src\Nourriture.cpp" />
+    <ClCompile Include="src\Position.cpp" />
+    <ClCompile Include="src\Ressource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AffichageMap.h" />
+    <ClInclude Include="src\Color.h" />
+    <ClInclude Include="src\Config.h" />
+    <ClInclude Include="src\econio.h" />
+    <ClInclude Include="src\Element.h" />
+    <ClInclude Include="src\Humain.h" />
+    <ClInclude Include="src\Mobile.h" />
+    <ClInclude Include="src\Monde.h" />
+    <ClInclude Include="src\Nourriture.h" />
+    <ClInclude Include="src\Position.h" />
+    <ClInclude Include="src\Ressource.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C756AA81-77C3-4C11-AF34-844D95BE7B12}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -75,33 +102,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="AffichageMap.cpp" />
-    <ClCompile Include="Color.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="econio.cpp" />
-    <ClCompile Include="Element.cpp" />
-    <ClCompile Include="Humain.cpp" />
-    <ClCompile Include="Mobile.cpp" />
-    <ClCompile Include="Monde.cpp" />
-    <ClCompile Include="Nourriture.cpp" />
-    <ClCompile Include="Position.cpp" />
-    <ClCompile Include="Ressource.cpp" />
-    <ClCompile Include="src\EntryPoint.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AffichageMap.h" />
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="econio.h" />
-    <ClInclude Include="Element.h" />
-    <ClInclude Include="Humain.h" />
-    <ClInclude Include="Mobile.h" />
-    <ClInclude Include="Monde.h" />
-    <ClInclude Include="Nourriture.h" />
-    <ClInclude Include="Position.h" />
-    <ClInclude Include="Ressource.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
