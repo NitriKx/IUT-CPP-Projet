@@ -12,7 +12,7 @@ private :
 
 public:
 	Mobile(void);
-	Mobile(unsigned int _vitesse, unsigned int _vision);
+	Mobile(string nom, Position pos, unsigned int _ptVie, unsigned int _espVie, unsigned int _forceCombat, unsigned int _vitesse, unsigned int _vision);
 	~Mobile(void);
 
 	void bouge(void);
@@ -30,8 +30,6 @@ public:
 	void setPtVie(unsigned int);
 	void setEspVie(unsigned int);
 	void setForceCombat(unsigned int);
-	void setVision(unsigned int);
 
-	
 };
 
