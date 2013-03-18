@@ -8,7 +8,7 @@ private :
 	Monde * monMonde;
 public:
 	AffichageMap(void);
-	AffichageMap( Monde * _monde);
+	AffichageMap(Monde * _monde);
 	~AffichageMap(void);
 	void affichageMap();
 

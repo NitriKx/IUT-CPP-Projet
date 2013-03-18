@@ -6,7 +6,12 @@
 //
 // ***************************
 
-const Color Element::couleur = Color(255, 255, 255);
+char Element::getAffich() {
+	return 'E';
+}
+COLORS Element::getCouleur() {	
+	return WHITE;
+}
 
 // ***************************
 //

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Position.h"
-#include "Color.h"
+#include "econio.h"
 
 #include <iostream>
 #include <string>
@@ -25,8 +25,8 @@ public:
 	// CONSTANTES
 	//
 
-	static const char affich = 'E'; // caractère d'affichage
-	static const Color couleur; // Couleur blanche
+	virtual char getAffich();
+	virtual COLORS getCouleur();
 
 	//
 	// CONSTRUCTEURS

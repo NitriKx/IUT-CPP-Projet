@@ -2,6 +2,19 @@
 
 // ***************************
 //
+//		CONSTANTES
+//
+// ***************************
+
+char Mobile::getAffich() {
+	return 'M';
+}
+COLORS Mobile::getCouleur() {	
+	return GREEN;
+}
+
+// ***************************
+//
 //		CONSTRUCTEURS
 //
 // ***************************

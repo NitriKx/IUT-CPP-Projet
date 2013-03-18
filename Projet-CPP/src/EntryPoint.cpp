@@ -1,6 +1,7 @@
 #include "Monde.h"
 #include "Element.h"
 #include "Mobile.h"
+#include "AffichageMap.h"
 
 #include <string>
 #include <iostream>
@@ -27,7 +28,10 @@ int main()
 	monde->ajouterElement(m1->getPosition(), m1);
 	monde->ajouterElement(m2->getPosition(), m2);
 
+	AffichageMap *map = new AffichageMap(monde);
+	map->affichageMap();
 
+	system("PAUSE>NUL");
 
 	return 0;
 }

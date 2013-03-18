@@ -1,5 +1,8 @@
 #pragma once
-#include "mobile.h"
+
+#include "Mobile.h"
+#include "econio.h"
+
 class Humain :
 	public Mobile
 {
@@ -10,7 +13,8 @@ public:
 	Humain(void);
 	~Humain(void);
 
-	static const char affich = 'H';//caractère d'affichage
+	char getAffich();
+	COLORS getCouleur();
 
 };
 
