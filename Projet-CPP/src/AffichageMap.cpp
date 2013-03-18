@@ -23,8 +23,10 @@ void AffichageMap::affichageMap()
 	
 	for(j=0;j<(*monMonde).size();j++)
 	{
-		gotoxy(monMonde->at(j)->getPosition().getX(),monMonde->at(j)->getPosition().getY());
-		cout << monMonde->at(j)->getAffich();
+		Element *e = monMonde->at(j);
+		gotoxy(e->getPosition().getX(),e->getPosition().getY());
+		textcolor(e->getCouleur());
+		cout << e->getAffich();
 	}
 		
 }
