@@ -1,5 +1,6 @@
 #include "Monde.h"
 #include "Config.h"
+#include "Mobile.h"
 
 Monde::Monde(void) : vector<Element*>()
 {
@@ -68,6 +69,15 @@ bool Monde::isCaseLibre(Position pos) {
 	}
 	
 	return false;
+}
+
+void Monde::jourSuivant()
+{
+	for(unsigned int i =0;i<this->size();i++)
+	{
+		if(typeid(*this->at(i)) == typeid(Mobile))
+			this->at(i)->agir();
+	}
 }
 
 // STATIQUE

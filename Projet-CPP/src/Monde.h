@@ -12,7 +12,11 @@ class Monde :
 {
 
 private:
+	//
+	// CONSTANTES
+	//
 	map<Position, unsigned int> carte;
+
 	static Monde *_instance;
 
 	Monde(void);
@@ -26,5 +30,8 @@ public:
 
 	bool isCaseLibre(Position pos);
 
+	void jourSuivant();
+
 	static Monde* getInstance();
+
 };

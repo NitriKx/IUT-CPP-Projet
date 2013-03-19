@@ -41,7 +41,7 @@ public:
 	//
 	// METHODES
 	//
-
+	void agir();
 	virtual void bouge(void);
 
 	Position calculerNouvelleCoordonnees(DIRECTIONS) const;

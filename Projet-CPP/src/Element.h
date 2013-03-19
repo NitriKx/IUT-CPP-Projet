@@ -24,10 +24,15 @@ public:
 	//
 	// CONSTANTES
 	//
-
 	virtual char getAffich();
 	virtual COLORS getCouleur();
+	
+	//
+	//METHODES
+	//
 
+	void agir();
+	
 	//
 	// CONSTRUCTEURS
 	//
