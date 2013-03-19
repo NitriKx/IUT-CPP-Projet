@@ -16,6 +16,8 @@
     <ClCompile Include="src\econio.cpp" />
     <ClCompile Include="src\Element.cpp" />
     <ClCompile Include="src\EntryPoint.cpp" />
+    <ClCompile Include="src\Gaulois.cpp" />
+    <ClCompile Include="src\Gauloise.cpp" />
     <ClCompile Include="src\Humain.cpp" />
     <ClCompile Include="src\Mobile.cpp" />
     <ClCompile Include="src\Monde.cpp" />
@@ -28,6 +30,8 @@
     <ClInclude Include="src\Config.h" />
     <ClInclude Include="src\econio.h" />
     <ClInclude Include="src\Element.h" />
+    <ClInclude Include="src\Gaulois.h" />
+    <ClInclude Include="src\Gauloise.h" />
     <ClInclude Include="src\Humain.h" />
     <ClInclude Include="src\Mobile.h" />
     <ClInclude Include="src\Monde.h" />
