@@ -90,6 +90,9 @@
     <ClCompile Include="src\Ressource.cpp">
       <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
+    <ClCompile Include="Village.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AffichageMap.h">
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="src\Gaulois.h">
       <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="Village.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
