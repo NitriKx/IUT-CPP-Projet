@@ -62,4 +62,4 @@
          SetConsoleCursorPosition    (hstdout, coordScreen);
      }
      }
-
+	 

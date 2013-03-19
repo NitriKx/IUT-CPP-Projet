@@ -69,5 +69,3 @@ void Mobile::setEspVie(unsigned int _espVie) { this->espVie=_espVie; }
 void Mobile::setForceCombat(unsigned int _forceCombat) { this->forceCombat=_forceCombat; }
 
 
-
-

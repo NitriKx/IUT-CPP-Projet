@@ -5,4 +5,3 @@ public:
 	Nourriture(void);
 	~Nourriture(void);
 };
-

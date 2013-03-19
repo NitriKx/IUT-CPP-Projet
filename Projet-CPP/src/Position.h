@@ -47,4 +47,3 @@ public:
 	bool operator==(Position pos);
 
 };
-

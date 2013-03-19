@@ -8,14 +8,12 @@ class Humain :
 {
 
 private :
-
+	int vie; 
 public:
 	Humain(void);
-	Humain(string nom, Position pos, unsigned int _ptVie, unsigned int _espVie, unsigned int _forceCombat, unsigned int _vitesse, unsigned int _vision);
 	~Humain(void);
 
 	char getAffich();
 	COLORS getCouleur();
 
 };
-
