@@ -31,3 +31,22 @@ void Village::setNourriture(unsigned int _nourriture)
 {
 	 nourriture = _nourriture;
 }
+
+void Village::consomerBois(unsigned int _bois)
+{
+		Village::bois -= _bois;
+}
+void Village::consomerNourriture(unsigned int _nourriture)
+{
+		Village::nourriture -= _nourriture;
+}
+
+void Village::recevoirBois(unsigned int _bois)
+{
+	Village::bois += _bois;
+}
+
+void Village::recevoirNourriture(unsigned int _nourriture)
+{
+	Village::nourriture += _nourriture;
+}

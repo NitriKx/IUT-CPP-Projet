@@ -24,7 +24,7 @@
     <ClCompile Include="src\Nourriture.cpp" />
     <ClCompile Include="src\Position.cpp" />
     <ClCompile Include="src\Ressource.cpp" />
-    <ClCompile Include="Village.cpp" />
+    <ClCompile Include="src\Village.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AffichageMap.h" />
@@ -39,7 +39,7 @@
     <ClInclude Include="src\Nourriture.h" />
     <ClInclude Include="src\Position.h" />
     <ClInclude Include="src\Ressource.h" />
-    <ClInclude Include="Village.h" />
+    <ClInclude Include="src\Village.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C756AA81-77C3-4C11-AF34-844D95BE7B12}</ProjectGuid>

@@ -90,7 +90,7 @@
     <ClCompile Include="src\Ressource.cpp">
       <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
-    <ClCompile Include="Village.cpp">
+    <ClCompile Include="src\Village.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -131,7 +131,7 @@
     <ClInclude Include="src\Gaulois.h">
       <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
-    <ClInclude Include="Village.h">
+    <ClInclude Include="src\Village.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
