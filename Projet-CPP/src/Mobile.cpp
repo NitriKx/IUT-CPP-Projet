@@ -64,6 +64,7 @@ void Mobile::bouge(void)
 		}
 	}
 
+	// On change la position de l'élément
 	monde->supprimerElement(this);
 	monde->ajouterElement(nouvellePos, this);
 
