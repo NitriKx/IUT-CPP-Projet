@@ -7,7 +7,7 @@ class Humain :
 	public Mobile
 {
 
-private :
+private:
 	
 
 public:
