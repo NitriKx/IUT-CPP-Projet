@@ -25,23 +25,23 @@ void AffichageMap::affichageMap()
 	// Dessin du contour
 	//
 	//  - Ligne du haut
-	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
+	for(int  i=0; i < Config::getTailleGrille().first+2; i++) {
 		gotoxy(i, 0);
 		cout << "=";
 	}
 	//  - Ligne du bas
-	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
-		gotoxy(i, Config::getTailleGrille().first+2);
+	for(int  i=0; i < Config::getTailleGrille().first+2; i++) {
+		gotoxy(i, Config::getTailleGrille().second+2);
 		cout << "=";
 	}
 	//  - Colonne de gauche
-	for(int  i=0; i < Config::getTailleGrille().first+2; i++) {
+	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
 		gotoxy(0, i);
 		cout << "=";
 	}
 	//  - Colonne de droite
-	for(int  i=0; i < Config::getTailleGrille().first+2; i++) {
-		gotoxy(Config::getTailleGrille().second+2, i);
+	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
+		gotoxy(Config::getTailleGrille().first+2, i);
 		cout << "=";
 	}
 	

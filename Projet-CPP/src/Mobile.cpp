@@ -1,4 +1,5 @@
 #include "Mobile.h"
+#include "Config.h"
 
 // ***************************
 //
@@ -44,11 +45,57 @@ Mobile::~Mobile(void)
 
 void Mobile::bouge(void)
 {
+	
+	bool coordTrouve = false;
+	DIRECTIONS dir = NORD;
 
+	// Tant que j
+	while(!coordTrouve) {
 
+		// On tire une direction au hasard
+	
+	}
 
+	
 }
 
+Position Mobile::calculerNouvelleCoordonnees(DIRECTIONS direction) const
+{
+	Position pos = this->getPosition();
+
+	switch(direction) {
+	
+	case NORD:
+		pos.setX(pos.getY()-2);
+		break;
+
+	case SUD:
+		pos.setX(pos.getY()+2);
+		break;
+	
+	case NORD_EST:
+		pos.setX(pos.getX()+1);
+		pos.setY(pos.getY()+1);
+		break;
+	
+	case SUD_EST:
+		pos.setX(pos.getX()+1);
+		pos.setY(pos.getY()-1);
+		break;
+	
+	case NORD_OUEST:
+		pos.setX(pos.getX()-1);
+		pos.setY(pos.getY()+1);
+		break;
+	
+	case SUD_OUEST:
+		pos.setX(pos.getX()-1);
+		pos.setY(pos.getY()-1);
+		break;
+	}
+
+	return pos;
+}
 
 // ***************************
 //

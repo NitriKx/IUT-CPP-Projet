@@ -8,9 +8,12 @@ public:
 	Config(void);
 	~Config(void);
 
-	/* First = X / Second = Y */
+	/* First = Largeur / Hauteur = Y */
 	static std::pair<int,int> getTailleGrille ()  {	
-		return std::pair<int, int>(10,10);
+		return std::pair<int, int>(
+			10, // Largeur
+			10  // Hauteur
+		);
 	};
 
 };

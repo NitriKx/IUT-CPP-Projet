@@ -36,3 +36,20 @@ void Monde::ajouterElement(Position pos, Element* e) {
 	this->carte[pos] = id;
 	e->setPosition(pos);
 }
+
+bool Monde::isCaseLibre(Position pos) {
+	try {
+		this->carte.at(pos);
+	} catch (const out_of_range& oor) {
+		return true;
+	}
+	return false;
+}
+
+// STATIQUE
+Monde* Monde::getInstance() {
+	if(_instance == NULL) {
+		_instance = new Monde();
+	}
+	return _instance;
+}

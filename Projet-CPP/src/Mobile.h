@@ -1,5 +1,16 @@
 #pragma once
-#include "element.h"
+#include "Element.h"
+
+enum DIRECTIONS 
+{
+	NORD,
+	SUD,
+	NORD_OUEST,
+	NORD_EST,
+	SUD_OUEST,
+	SUD_EST
+};
+
 class Mobile :
 	public Element
 {
@@ -17,7 +28,7 @@ public:
 	//
 
 	char getAffich();
-	COLORS getCouleur();
+	COLORS getCouleur();	
 
 	//
 	// CONSTRCUTEURS
@@ -32,6 +43,8 @@ public:
 	//
 
 	virtual void bouge(void);
+
+	Position calculerNouvelleCoordonnees(DIRECTIONS) const;
 
 	//
 	// GETTERS ET SETTERS
