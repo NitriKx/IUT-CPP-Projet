@@ -31,7 +31,7 @@ public:
 	// METHODES
 	//
 
-	void bouge(void);
+	virtual void bouge(void);
 
 	//
 	// GETTERS ET SETTERS

@@ -8,7 +8,8 @@ class Humain :
 {
 
 private :
-	int vie; 
+	
+
 public:
 	Humain(void);
 	~Humain(void);
