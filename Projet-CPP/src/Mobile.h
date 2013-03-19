@@ -3,12 +3,12 @@
 
 enum DIRECTIONS 
 {
-	NORD,
-	SUD,
-	NORD_OUEST,
-	NORD_EST,
-	SUD_OUEST,
-	SUD_EST
+	NORD = 0,
+	SUD = 1,
+	NORD_OUEST = 2,
+	NORD_EST = 3,
+	SUD_OUEST = 4,
+	SUD_EST = 5
 };
 
 class Mobile :

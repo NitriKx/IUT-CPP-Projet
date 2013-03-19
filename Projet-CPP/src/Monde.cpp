@@ -1,5 +1,5 @@
 #include "Monde.h"
-
+#include "Config.h"
 
 Monde::Monde(void) : vector<Element*>()
 {
@@ -15,6 +15,21 @@ map<Position, unsigned int>& Monde::getCarte() {
 }
 
 bool Monde::supprimerElement(Element* e) {
+
+	// On recherche l'index de l'élément
+	int indexElement = -1;
+	for(int i = 0; i < this->size(); i++) {
+		if((*this)[i] == e) {
+			indexElement = i;
+			break;
+		}
+	}
+
+	if(indexElement < 0) {
+		return false;
+	}
+
+	this->erase(this->begin() + indexElement);
 	return this->carte.erase(e->getPosition()) > 0;
 }
 
@@ -38,11 +53,20 @@ void Monde::ajouterElement(Position pos, Element* e) {
 }
 
 bool Monde::isCaseLibre(Position pos) {
+	
+	bool result = false;
+	
+	// On vérifie que les coordonnées sont valides
+	if(pos.getX() < 0 || pos.getY < 0 || pos.getX() > Config::getTailleGrille().first-1 || pos.getY() > Config::getTailleGrille().second-1) 
+		return false;
+
+	// On vérifie qu'aucun éléments n'existe à cet emplacement
 	try {
 		this->carte.at(pos);
 	} catch (const out_of_range& oor) {
 		return true;
 	}
+	
 	return false;
 }
 

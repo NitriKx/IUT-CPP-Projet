@@ -17,7 +17,7 @@ int main()
 	//				TESTS
 	// ================================
 	
-	Monde *monde = new Monde();
+	Monde *monde = Monde::getInstance();
 
 	Element *e0 = new Element("E0", Position(0,0));
 	Element *e1 = new Element("E1", Position(1,1));

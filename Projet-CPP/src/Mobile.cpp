@@ -45,18 +45,28 @@ Mobile::~Mobile(void)
 
 void Mobile::bouge(void)
 {
-	
+	Monde* monde = Monde::getInstance();
 	bool coordTrouve = false;
 	DIRECTIONS dir = NORD;
+	Position nouvellePos;
 
-	// Tant que j
+	// Tant que on a pas trouvé de coordonnées valide
 	while(!coordTrouve) {
 
-		// On tire une direction au hasard
-	
+		// On tire une direction au hasard entre 0 et 5
+		int rand =std::rand() % 6;
+
+		nouvellePos = calculerNouvelleCoordonnees((DIRECTIONS) rand);
+
+		// Si la case est libre
+		if(Monde::getInstance()->isCaseLibre(nouvellePos)) {
+			coordTrouve = true;
+		}
 	}
 
-	
+	monde->supprimerElement(this);
+	monde->ajouterElement(nouvellePos, this);
+
 }
 
 Position Mobile::calculerNouvelleCoordonnees(DIRECTIONS direction) const
@@ -66,11 +76,11 @@ Position Mobile::calculerNouvelleCoordonnees(DIRECTIONS direction) const
 	switch(direction) {
 	
 	case NORD:
-		pos.setX(pos.getY()-2);
+		pos.setX(pos.getY()+2);
 		break;
 
 	case SUD:
-		pos.setX(pos.getY()+2);
+		pos.setX(pos.getY()-2);
 		break;
 	
 	case NORD_EST:
