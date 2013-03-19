@@ -9,7 +9,7 @@ public:
 
 
 	Arbre(void);
-	Arbre::Arbre(string nom, Position pos):Ressource(nom,pos);
+	Arbre(string nom, Position pos);
 
 	~Arbre(void);
 

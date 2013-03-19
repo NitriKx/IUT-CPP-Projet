@@ -93,6 +93,12 @@
     <ClCompile Include="src\Village.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\Sanglier.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Arbre.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AffichageMap.h">
@@ -133,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="src\Village.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Arbre.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sanglier.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
