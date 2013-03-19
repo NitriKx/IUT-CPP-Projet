@@ -21,6 +21,9 @@ void AffichageMap::affichageMap()
 {
 	unsigned int j;
 	
+	// On réinitialise la couleur
+	textcolor(WHITE);
+
 	//
 	// Dessin du contour
 	//

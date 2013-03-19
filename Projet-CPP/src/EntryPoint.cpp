@@ -33,11 +33,14 @@ int main()
 	monde->ajouterElement(m2->getPosition(), m2);
 
 	AffichageMap *map = new AffichageMap(monde);
-	map->affichageMap();
-
-	// On place le curseur à la fin
-	gotoxy(Config::getTailleGrille().second+3, Config::getTailleGrille().first+3);
-	system("PAUSE>NUL");
+	
+	while(1) {
+		map->affichageMap();
+		// On place le curseur à la fin
+		gotoxy(Config::getTailleGrille().second+3, Config::getTailleGrille().first+3);
+		system("PAUSE>NUL");
+		monde->jourSuivant();
+	}
 
 	return 0;
 }
