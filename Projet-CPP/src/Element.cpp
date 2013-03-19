@@ -44,4 +44,13 @@ void Element::setNom(string nom) { this->nom = nom; }
 void Element::setPosition(Position pos) { this->pos = pos; }
 void Element::setPostion(int x, int y) { this->pos = Position(x,y); }
 
+// ***************************
+//
+//		METHODES
+//
+// ***************************
 
+void Element::agir()
+{
+
+}

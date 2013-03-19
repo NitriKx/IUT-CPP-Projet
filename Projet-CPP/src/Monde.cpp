@@ -1,4 +1,5 @@
 #include "Monde.h"
+#include "Mobile.h"
 
 
 Monde::Monde(void) : vector<Element*>()
@@ -35,4 +36,13 @@ void Monde::ajouterElement(Position pos, Element* e) {
 
 	this->carte[pos] = id;
 	e->setPosition(pos);
+}
+
+void Monde::jourSuivant()
+{
+	for(unsigned int i =0;i<this->size();i++)
+	{
+		if(typeid(*this->at(i)) == typeid(Mobile))
+			this->at(i)->agir();
+	}
 }
