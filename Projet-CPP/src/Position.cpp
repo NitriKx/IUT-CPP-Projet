@@ -87,3 +87,4 @@ bool Position::operator<(const Position &pos) const
 bool Position::operator==(Position pos) {
 	return this->getX() == pos.getX() && this->getY() == pos.getY();
 }
+
