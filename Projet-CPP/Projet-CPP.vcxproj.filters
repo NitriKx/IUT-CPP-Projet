@@ -13,9 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Éléments">
+      <UniqueIdentifier>{3c945ee6-a9b0-42c9-8e81-d8484c9d90fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Éléments">
+      <UniqueIdentifier>{44146cad-9d29-43ce-b27d-d42476eb0b5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\EntryPoint.cpp">
+    <ClCompile Include="src\AffichageMap.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\AffichageMap.cpp">
@@ -27,32 +33,62 @@
     <ClCompile Include="src\econio.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\Element.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Humain.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Mobile.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="src\Monde.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Nourriture.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="src\Position.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="src\Ressource.cpp">
+    <ClCompile Include="src\Config.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\econio.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntryPoint.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Monde.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Position.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Element.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Humain.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mobile.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nourriture.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ressource.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Element.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
     <ClCompile Include="src\Gaulois.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
     <ClCompile Include="src\Gauloise.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Humain.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mobile.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nourriture.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ressource.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,32 +101,32 @@
     <ClInclude Include="src\econio.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\Element.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Humain.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Mobile.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="src\Monde.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Nourriture.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="src\Position.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ressource.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="src\Element.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
-    <ClInclude Include="src\Gaulois.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="src\Humain.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mobile.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Nourriture.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ressource.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
     <ClInclude Include="src\Gauloise.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gaulois.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
