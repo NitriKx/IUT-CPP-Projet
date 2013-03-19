@@ -7,6 +7,8 @@
 //
 // ***************************
 
+Monde* Monde::_instance = NULL;
+
 char Mobile::getAffich() {
 	return 'M';
 }
@@ -125,7 +127,5 @@ void Mobile::setVitesse(unsigned int _vitesse) { this->vitesse = _vitesse; }
 void Mobile::setPtVie(unsigned int _ptVie) { this->ptVie=_ptVie; }
 void Mobile::setEspVie(unsigned int _espVie) { this->espVie=_espVie; }
 void Mobile::setForceCombat(unsigned int _forceCombat) { this->forceCombat=_forceCombat; }
-
-
 
 

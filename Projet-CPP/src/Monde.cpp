@@ -18,7 +18,7 @@ bool Monde::supprimerElement(Element* e) {
 
 	// On recherche l'index de l'élément
 	int indexElement = -1;
-	for(int i = 0; i < this->size(); i++) {
+	for(unsigned int i = 0; i < this->size(); i++) {
 		if((*this)[i] == e) {
 			indexElement = i;
 			break;
@@ -57,7 +57,7 @@ bool Monde::isCaseLibre(Position pos) {
 	bool result = false;
 	
 	// On vérifie que les coordonnées sont valides
-	if(pos.getX() < 0 || pos.getY < 0 || pos.getX() > Config::getTailleGrille().first-1 || pos.getY() > Config::getTailleGrille().second-1) 
+	if(pos.getX() < 0 || pos.getY() < 0 || pos.getX() > Config::getTailleGrille().first-1 || pos.getY() > Config::getTailleGrille().second-1) 
 		return false;
 
 	// On vérifie qu'aucun éléments n'existe à cet emplacement

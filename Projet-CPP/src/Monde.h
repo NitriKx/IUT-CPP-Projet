@@ -23,8 +23,8 @@ public:
 
 	bool supprimerElement(Element*) ;
 	void ajouterElement(Position pos, Element* e);
+
 	bool isCaseLibre(Position pos);
 
 	static Monde* getInstance();
 };
-

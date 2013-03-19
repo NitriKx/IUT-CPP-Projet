@@ -12,28 +12,38 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AffichageMap.cpp" />
+    <ClCompile Include="src\Arbre.cpp" />
     <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\econio.cpp" />
     <ClCompile Include="src\Element.cpp" />
     <ClCompile Include="src\EntryPoint.cpp" />
+    <ClCompile Include="src\Gaulois.cpp" />
+    <ClCompile Include="src\Gauloise.cpp" />
     <ClCompile Include="src\Humain.cpp" />
     <ClCompile Include="src\Mobile.cpp" />
     <ClCompile Include="src\Monde.cpp" />
     <ClCompile Include="src\Nourriture.cpp" />
     <ClCompile Include="src\Position.cpp" />
     <ClCompile Include="src\Ressource.cpp" />
+    <ClCompile Include="src\Sanglier.cpp" />
+    <ClCompile Include="src\Village.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AffichageMap.h" />
+    <ClInclude Include="src\Arbre.h" />
     <ClInclude Include="src\Config.h" />
     <ClInclude Include="src\econio.h" />
     <ClInclude Include="src\Element.h" />
+    <ClInclude Include="src\Gaulois.h" />
+    <ClInclude Include="src\Gauloise.h" />
     <ClInclude Include="src\Humain.h" />
     <ClInclude Include="src\Mobile.h" />
     <ClInclude Include="src\Monde.h" />
     <ClInclude Include="src\Nourriture.h" />
     <ClInclude Include="src\Position.h" />
     <ClInclude Include="src\Ressource.h" />
+    <ClInclude Include="src\Sanglier.h" />
+    <ClInclude Include="src\Village.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C756AA81-77C3-4C11-AF34-844D95BE7B12}</ProjectGuid>

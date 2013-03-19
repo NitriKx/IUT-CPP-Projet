@@ -24,6 +24,21 @@
     <ClCompile Include="src\AffichageMap.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\AffichageMap.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Config.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\econio.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Monde.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Position.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="src\Config.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -52,6 +67,36 @@
       <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
     <ClCompile Include="src\Ressource.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Element.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gaulois.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gauloise.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Humain.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mobile.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Nourriture.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ressource.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Village.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sanglier.cpp">
+      <Filter>Fichiers sources\Éléments</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Arbre.cpp">
       <Filter>Fichiers sources\Éléments</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,6 +129,21 @@
       <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
     <ClInclude Include="src\Ressource.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gauloise.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gaulois.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Village.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Arbre.h">
+      <Filter>Fichiers d%27en-tête\Éléments</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sanglier.h">
       <Filter>Fichiers d%27en-tête\Éléments</Filter>
     </ClInclude>
   </ItemGroup>
