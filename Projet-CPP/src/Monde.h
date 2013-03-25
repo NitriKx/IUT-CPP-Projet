@@ -35,6 +35,7 @@ public:
 	bool isCaseLibre(Position pos);
 
 	void jourSuivant();
+	void initialiserMonde();
 
 	static Monde* getInstance();
 

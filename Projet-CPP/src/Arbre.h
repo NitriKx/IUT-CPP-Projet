@@ -23,5 +23,5 @@ public:
 	//
 	// METHODES
 	//
-	void agir(void);
+	using Ressource::agir;
 };

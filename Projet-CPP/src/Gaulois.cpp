@@ -20,8 +20,3 @@ char Gaulois::getAffich() {
 COLORS Gaulois::getCouleur() {	
 	return BLUE;
 }
-
-void Gaulois::bouge(void)
-{
-
-}

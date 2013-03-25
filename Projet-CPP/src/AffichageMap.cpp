@@ -42,8 +42,8 @@ void AffichageMap::affichageMap()
 }
 
 void AffichageMap::viderInterieurGrille() {
-	for(int i = 1 ; i < Config::getTailleGrille().first+1; i++) {
-		for(int j = 1 ; j < Config::getTailleGrille().second+1; j++) {
+	for(int i = 1 ; i < Config::dimentions.first+1; i++) {
+		for(int j = 1 ; j < Config::dimentions.second+1; j++) {
 			gotoxy(i,j);
 			cout << " ";
 		}
@@ -56,23 +56,23 @@ void AffichageMap::dessinerGrille() {
 	// Dessin du contour
 	//
 	//  - Ligne du haut
-	for(int  i=0; i < Config::getTailleGrille().first+1; i++) {
+	for(int  i=0; i < Config::dimentions.first+1; i++) {
 		gotoxy(i, 0);
 		cout << "=";
 	}
 	//  - Ligne du bas
-	for(int  i=0; i < Config::getTailleGrille().first+1; i++) {
-		gotoxy(i, Config::getTailleGrille().second+1);
+	for(int  i=0; i < Config::dimentions.first+1; i++) {
+		gotoxy(i, Config::dimentions.second+1);
 		cout << "=";
 	}
 	//  - Colonne de gauche
-	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
+	for(int  i=0; i < Config::dimentions.second+2; i++) {
 		gotoxy(0, i);
 		cout << "=";
 	}
 	//  - Colonne de droite
-	for(int  i=0; i < Config::getTailleGrille().second+2; i++) {
-		gotoxy(Config::getTailleGrille().first+1, i);
+	for(int  i=0; i < Config::dimentions.second+2; i++) {
+		gotoxy(Config::dimentions.first+1, i);
 		cout << "=";
 	}
 }

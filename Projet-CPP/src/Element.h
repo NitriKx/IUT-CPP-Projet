@@ -31,7 +31,7 @@ public:
 	//METHODES
 	//
 
-	void agir();
+	virtual void agir();
 	
 	//
 	// CONSTRUCTEURS

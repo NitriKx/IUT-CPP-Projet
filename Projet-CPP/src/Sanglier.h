@@ -1,6 +1,12 @@
 #pragma once
+
+// Utilisé pour désactiver un warning gênant
+#pragma warning( disable : 4250 )
+
 #include "Ressource.h"
-class Sanglier : public Ressource
+#include "Mobile.h"
+
+class Sanglier : public Ressource, public Mobile
 {
 public:
 
@@ -10,6 +16,8 @@ public:
 
 	Sanglier(string nom, Position pos);
 	~Sanglier(void);
+
+	using Mobile::agir;
 
 	//
 	// CONSTANTES

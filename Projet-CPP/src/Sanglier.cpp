@@ -25,5 +25,5 @@ char Sanglier::getAffich() {
 	return 'S';
 }
 COLORS Sanglier::getCouleur() {	
-	return BROWN;
+	return YELLOW;
 }

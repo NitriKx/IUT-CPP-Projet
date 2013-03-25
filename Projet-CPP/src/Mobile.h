@@ -12,7 +12,7 @@ enum DIRECTIONS
 };
 
 class Mobile :
-	public Element
+	public virtual Element
 {
 private :
 	unsigned int ptVie;       // Point de vie restant d'un élément

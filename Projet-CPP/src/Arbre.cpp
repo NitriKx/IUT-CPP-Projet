@@ -12,6 +12,7 @@ Arbre::~Arbre(void)
 Arbre::Arbre(string nom, Position pos):Ressource(nom,pos){
 }
 
+
 // ***************************
 //
 //		CONSTANTES

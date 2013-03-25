@@ -17,6 +17,4 @@ public:
 	char getAffich();
 	COLORS getCouleur();
 
-	void agir(void);
-	void bouger(void);
 };

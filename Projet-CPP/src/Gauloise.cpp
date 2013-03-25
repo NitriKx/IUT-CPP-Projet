@@ -21,7 +21,4 @@ COLORS Gauloise::getCouleur() {
 	return LIGHTMAGENTA;
 }
 
-void Gauloise::bouge(void)
-{
-}
 

@@ -1,6 +1,10 @@
 #include "Monde.h"
 #include "Config.h"
 #include "Mobile.h"
+#include "Arbre.h"
+#include "Sanglier.h"
+#include "Gaulois.h"
+#include "Gauloise.h"
 
 Monde::Monde(void) : vector<Element*>()
 {
@@ -69,7 +73,7 @@ int Monde::getIndexDansListe(Element *e) {
 bool Monde::isCaseLibre(Position pos) {
 		
 	// On vérifie que les coordonnées sont valides
-	if(pos.getX() < 0 || pos.getY() < 0 || pos.getX() > (Config::getTailleGrille().first-1) || pos.getY() > (Config::getTailleGrille().second-1) )
+	if(pos.getX() < 0 || pos.getY() < 0 || pos.getX() > (Config::dimentions.first-1) || pos.getY() > (Config::dimentions.second-1) )
 		return false;
 
 	// Si la case est occupée
@@ -87,8 +91,14 @@ void Monde::jourSuivant()
 	{
 		try {
 		
-			if(typeid(*this->at(i)) == typeid(Mobile))
-				((Mobile*) this->at(i))-> Mobile::agir();
+			if(typeid(*this->at(i)) == typeid(Gaulois))
+				dynamic_cast<Gaulois *>(this->at(i))-> Gaulois::agir();
+			if(typeid(*this->at(i)) == typeid(Gauloise))
+				dynamic_cast<Gauloise *>(this->at(i))-> Gauloise::agir();
+			if(typeid(*this->at(i)) == typeid(Sanglier)) {
+				Sanglier *sanglier = dynamic_cast<Sanglier *>(this->at(i));
+				sanglier->agir();
+			}
 		
 		} catch(const std::logic_error & e) {
 			OutputDebugStringA(e.what());
@@ -102,4 +112,35 @@ Monde* Monde::getInstance() {
 		_instance = new Monde();
 	}
 	return _instance;
+}
+
+
+void Monde::initialiserMonde() {
+
+	std::srand((unsigned int) time(0));
+
+	// On ajoute les arbres
+	for(int i = 0; i < Config::nb_arbres; i++) {
+		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		this->ajouterElement(pos, new Arbre("A", pos));
+	}
+
+	// On ajoute les sangliers
+	for(int i = 0; i < Config::nb_sanglier; i++) {
+		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		Element *elem = dynamic_cast<Element *>(new Sanglier("S", pos));
+		this->ajouterElement(pos, elem);
+	}
+
+	// On ajoute des gauloise
+	for(int i = 0; i < Config::nb_gauloise; i++) {
+		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		this->ajouterElement(pos, new Gauloise("", pos, 20, 5, 3, 2, 3));
+	}
+
+	// On ajoute des gaulois
+	for(int i = 0; i < Config::nb_gaulois; i++) {
+		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		this->ajouterElement(pos, new Gaulois("", pos, 20, 5, 3, 2, 3));
+	}
 }
