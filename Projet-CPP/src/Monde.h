@@ -28,6 +28,10 @@ public:
 	bool supprimerElement(Element*) ;
 	void ajouterElement(Position pos, Element* e);
 
+	void deplacerElement(Element *e, Position nouvellePos);
+
+	int getIndexDansListe(Element *e);
+
 	bool isCaseLibre(Position pos);
 
 	void jourSuivant();

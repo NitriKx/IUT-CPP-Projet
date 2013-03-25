@@ -27,7 +27,7 @@ public:
 	//
 	// METHODES
 	//
-
+	void agir(void);
 	void bouge(void);	
 };
 

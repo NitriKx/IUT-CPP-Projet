@@ -1,5 +1,8 @@
+#include <time.h>
+
 #include "Mobile.h"
 #include "Config.h"
+#include <sstream>
 
 // ***************************
 //
@@ -44,67 +47,95 @@ Mobile::~Mobile(void)
 //
 // ***************************
 
+void Mobile::agir(void)
+{
+	this->Mobile::bouge();
+}
 
 void Mobile::bouge(void)
 {
+	string debugMessage("L'élément ");
+	debugMessage.append(this->getNom());
+	debugMessage.append(" est en train de bouger.");
+	OutputDebugString(L"Bouge\n");
+
 	Monde* monde = Monde::getInstance();
 	bool coordTrouve = false;
 	DIRECTIONS dir = NORD;
-	Position nouvellePos;
+	Position nouvellePos(this->getPosition());
+	int i = 0;
 
-	// Tant que on a pas trouvé de coordonnées valide
-	while(!coordTrouve) {
+	// On récupère les milliseconde, secondes et minutes actuelles pour avoir un nombre vraiment aléatoire
+	SYSTEMTIME st;
+	GetSystemTime(&st);
+	std::srand(st.wMinute * 1000 * 60 + st.wSecond*1000 + st.wMilliseconds);
 
-		// On tire une direction au hasard entre 0 et 5
-		int rand =std::rand() % 6;
+	// On tire une direction au hasard entre 0 et 5
+	int rand = std::rand() % 6;
+
+	// Tant que on a pas trouvé de coordonnées valide et que l'on ne les 
+	// a pas toutes testés
+	while(!coordTrouve && i < 6) {
 
 		nouvellePos = calculerNouvelleCoordonnees((DIRECTIONS) rand);
 
-		// Si la case est libre
+		// Si la case est libre (et qu'elle existe)
 		if(Monde::getInstance()->isCaseLibre(nouvellePos)) {
 			coordTrouve = true;
 		}
+
+		if(rand == 5) {
+			rand = 0;
+		} else {
+			rand++;
+		}
+
+		i++;
 	}
 
-	// On change la position de l'élément
-	monde->supprimerElement(this);
-	monde->ajouterElement(nouvellePos, this);
+	// Si l'élément n'a pas été bloqué on le déplace
+	if(coordTrouve) {
+		// On change la position de l'élément
+		monde->deplacerElement(this, nouvellePos);	
+	} else {
+		OutputDebugString(L"Element bloqué !\n");
+	}
 
+	
 }
 
 Position Mobile::calculerNouvelleCoordonnees(DIRECTIONS direction) const
 {
-	Position pos = this->getPosition();
+	Position pos;
 
 	switch(direction) {
 	
 	case NORD:
-		pos.setX(pos.getY()+2);
+		pos.setCoordonnees(this->getPosition().getX(), this->getPosition().getY()-2);
 		break;
 
 	case SUD:
-		pos.setX(pos.getY()-2);
+		pos.setCoordonnees(this->getPosition().getX(), this->getPosition().getY()+2);
 		break;
 	
 	case NORD_EST:
-		pos.setX(pos.getX()+1);
-		pos.setY(pos.getY()+1);
+		pos.setCoordonnees(this->getPosition().getX()+1, this->getPosition().getY()-1);
 		break;
 	
 	case SUD_EST:
-		pos.setX(pos.getX()+1);
-		pos.setY(pos.getY()-1);
+		pos.setCoordonnees(this->getPosition().getX()+1, this->getPosition().getY()+1);
 		break;
 	
 	case NORD_OUEST:
-		pos.setX(pos.getX()-1);
-		pos.setY(pos.getY()+1);
+		pos.setCoordonnees(this->getPosition().getX()-1, this->getPosition().getY()-1);
 		break;
 	
 	case SUD_OUEST:
-		pos.setX(pos.getX()-1);
-		pos.setY(pos.getY()-1);
+		pos.setCoordonnees(this->getPosition().getX()-1, this->getPosition().getY()+1);
 		break;
+	default:
+		OutputDebugString(L"Direction inconnue !");
+	break;
 	}
 
 	return pos;
@@ -129,11 +160,3 @@ void Mobile::setEspVie(unsigned int _espVie) { this->espVie=_espVie; }
 void Mobile::setForceCombat(unsigned int _forceCombat) { this->forceCombat=_forceCombat; }
 
 
-//
-//METHODES
-//
-
-void Mobile::agir()
-{
-	this->bouge();
-}

@@ -11,5 +11,7 @@ public:
 	AffichageMap(Monde * _monde);
 	~AffichageMap(void);
 	void affichageMap();
+	void viderInterieurGrille() ;
+	void dessinerGrille() ;
 
 };

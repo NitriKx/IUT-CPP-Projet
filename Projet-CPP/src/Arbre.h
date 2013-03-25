@@ -13,11 +13,15 @@ public:
 
 	~Arbre(void);
 
-		//
+	//
 	// CONSTANTES
 	//
 
 	char getAffich();
 	COLORS getCouleur();
 
+	//
+	// METHODES
+	//
+	void agir(void);
 };

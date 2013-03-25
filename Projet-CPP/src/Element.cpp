@@ -52,5 +52,5 @@ void Element::setPostion(int x, int y) { this->pos = Position(x,y); }
 
 void Element::agir()
 {
-
+	OutputDebugString(L"Action par défault appelée !\n");
 }

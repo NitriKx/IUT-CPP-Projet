@@ -34,9 +34,27 @@ bool Monde::supprimerElement(Element* e) {
 	return this->carte.erase(e->getPosition()) > 0;
 }
 
+// Ajout l'élément au monde
+// Doit être placé plus tard
 void Monde::ajouterElement(Position pos, Element* e) {
 	this->push_back(e);
+	int id = getIndexDansListe(e);
+	this->carte[pos] = id;
+	e->setPosition(pos);
+}
 
+void Monde::deplacerElement(Element *e, Position nouvellePos) {
+	int id = this->getIndexDansListe(e);
+
+	if(id < 0)
+		throw new string("L'element placé n'existe pas dans le monde.");
+
+	this->getCarte().erase(e->getPosition());
+	e->setPosition(nouvellePos);
+	this->carte[nouvellePos] = id;
+}
+
+int Monde::getIndexDansListe(Element *e) {
 	// On récupère la position de l'élément
 	int id = -1;
 	for(unsigned int i = 0 ; i < this->size() ; i++) {
@@ -45,38 +63,36 @@ void Monde::ajouterElement(Position pos, Element* e) {
 			break;
 		}
 	}
-
-	if(id < 0)
-		throw new string("L'element placé n'existe pas dans le monde.");
-
-	this->carte[pos] = id;
-	e->setPosition(pos);
+	return id;
 }
 
 bool Monde::isCaseLibre(Position pos) {
-	
-	bool result = false;
-	
+		
 	// On vérifie que les coordonnées sont valides
-	if(pos.getX() < 0 || pos.getY() < 0 || pos.getX() > Config::getTailleGrille().first-1 || pos.getY() > Config::getTailleGrille().second-1) 
+	if(pos.getX() < 0 || pos.getY() < 0 || pos.getX() > (Config::getTailleGrille().first-1) || pos.getY() > (Config::getTailleGrille().second-1) )
 		return false;
 
-	// On vérifie qu'aucun éléments n'existe à cet emplacement
-	try {
-		this->carte.at(pos);
-	} catch (const out_of_range& oor) {
-		return true;
+	// Si la case est occupée
+	if(this->carte.count(pos) > 0) {
+		return false;
 	}
-	
-	return false;
+
+	OutputDebugString(L"Case libre ! \n");
+	return true;
 }
 
 void Monde::jourSuivant()
 {
-	for(unsigned int i =0;i<this->size();i++)
+	for(unsigned int i = 0; i < this->size(); i++)
 	{
-		if(typeid(*this->at(i)) == typeid(Mobile))
-			this->at(i)->agir();
+		try {
+		
+			if(typeid(*this->at(i)) == typeid(Mobile))
+				((Mobile*) this->at(i))-> Mobile::agir();
+		
+		} catch(const std::logic_error & e) {
+			OutputDebugStringA(e.what());
+		}
 	}
 }
 

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <stdexcept>
 
+#include <time.h>
+
 using namespace std;
 
 class Position
@@ -13,37 +15,24 @@ private:
 public:
 	Position(void);
 	Position(int x, int y);
+	Position(const Position &pos);
 	~Position(void);
 	
-	bool isCoordonneesValide(int x, int y);
+	static bool isCoordonneesValide(int x, int y);
+	
+	// Génère une Position aléatoire en respectant les dimention de grille passées
+	// en paramètre. Les coordonnées seront entre 0 et maxLargeur-1 (respectivement 0 et maxHauteur).
+	static Position random(unsigned int maxLargeur, unsigned int maxHauteur);
+	
 	int getX(void);
 	int getY(void);
-	
-	/**
-		Modifie la valeur de X.
-		Peut lever une exception.
-	**/
 	void setX(int x);
-
-	/**
-		Modifie la valeur de Y.
-		Peut lever une exception.
-	**/
 	void setY(int Y);
-
-	/**
-		Modifie la valeur de X et de Y.
-		Peut lever une exception.
-	**/
 	void setCoordonnees(int x, int y);
 
-	/**
-		Lève une exception indiquant que les coordonnées données sont incompatibles.
-	**/
-	void leverErreurMauvaiseCoordonnees(int x, int y);
-	
+	void leverErreurMauvaiseCoordonnees(int x, int y);	
+
 	bool operator<(const Position &pos) const;
-
 	bool operator==(Position pos);
-
+	Position& operator=(const Position &pos);
 };
