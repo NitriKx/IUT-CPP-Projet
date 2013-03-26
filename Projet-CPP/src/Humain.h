@@ -3,6 +3,12 @@
 #include "Mobile.h"
 #include "econio.h"
 
+enum CIBLE {
+	NOURRITURE = 0,
+	BOIS = 1,
+	REPRODUCTION = 2
+};
+
 class Humain :
 	public Mobile
 {
@@ -16,5 +22,10 @@ public:
 
 	char getAffich();
 	COLORS getCouleur();
+
+	void agir();
+	void bouger(DIRECTIONS direction);
+	Position chercherPlusPres(CIBLE cible);
+	DIRECTIONS Humain::calculerDirectionPourAllerPosition(Position pos);
 
 };

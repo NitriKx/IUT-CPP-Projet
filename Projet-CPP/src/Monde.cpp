@@ -5,6 +5,7 @@
 #include "Sanglier.h"
 #include "Gaulois.h"
 #include "Gauloise.h"
+#include "Village.h"
 
 Monde::Monde(void) : vector<Element*>()
 {
@@ -85,6 +86,32 @@ bool Monde::isCaseLibre(Position pos) {
 	return true;
 }
 
+OCCUPANT Monde::getTypeOccupant(Position pos) {
+
+	if(this->isCaseLibre(pos)) {
+		return VIDE;
+	}
+	
+	// Si la position est occupée
+	if(this->carte.count(pos) > 0) {
+
+		// On récupère l'élément à l'emplacement
+		Element* elem = (*this) [(this->carte[pos])];
+
+		if(typeid(*elem) == typeid(Arbre))
+			return ARBRE;
+		if(typeid(*elem) == typeid(Sanglier))
+			return SANGLIER;
+		if(typeid(*elem) == typeid(Gaulois))
+			return GAULOIS;
+		if(typeid(*elem) == typeid(Gauloise))
+			return GAULOISE;
+
+	}
+
+	return VIDE;
+}
+
 void Monde::jourSuivant()
 {
 	for(unsigned int i = 0; i < this->size(); i++)
@@ -143,4 +170,7 @@ void Monde::initialiserMonde() {
 		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
 		this->ajouterElement(pos, new Gaulois("", pos, 20, 5, 3, 2, 3));
 	}
+
+	Village::nourriture = Config::nourriture;
+	Village::bois = Config::bois;
 }

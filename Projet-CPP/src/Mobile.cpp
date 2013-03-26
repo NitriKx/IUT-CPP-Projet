@@ -77,7 +77,7 @@ void Mobile::bouge(void)
 	// a pas toutes testés
 	while(!coordTrouve && i < 6) {
 
-		nouvellePos = calculerNouvelleCoordonnees((DIRECTIONS) rand);
+		nouvellePos = calculerNouvelleCoordonnees(this->getPosition(), (DIRECTIONS) rand);
 
 		// Si la case est libre (et qu'elle existe)
 		if(Monde::getInstance()->isCaseLibre(nouvellePos)) {
@@ -104,34 +104,34 @@ void Mobile::bouge(void)
 	
 }
 
-Position Mobile::calculerNouvelleCoordonnees(DIRECTIONS direction) const
+Position Mobile::calculerNouvelleCoordonnees(Position posDepart, DIRECTIONS direction) const
 {
 	Position pos;
 
 	switch(direction) {
 	
 	case NORD:
-		pos.setCoordonnees(this->getPosition().getX(), this->getPosition().getY()-2);
+		pos.setCoordonnees(posDepart.getX(), posDepart.getY()-2);
 		break;
 
 	case SUD:
-		pos.setCoordonnees(this->getPosition().getX(), this->getPosition().getY()+2);
+		pos.setCoordonnees(posDepart.getX(), posDepart.getY()+2);
 		break;
 	
 	case NORD_EST:
-		pos.setCoordonnees(this->getPosition().getX()+1, this->getPosition().getY()-1);
+		pos.setCoordonnees(posDepart.getX()+1, posDepart.getY()-1);
 		break;
 	
 	case SUD_EST:
-		pos.setCoordonnees(this->getPosition().getX()+1, this->getPosition().getY()+1);
+		pos.setCoordonnees(posDepart.getX()+1, posDepart.getY()+1);
 		break;
 	
 	case NORD_OUEST:
-		pos.setCoordonnees(this->getPosition().getX()-1, this->getPosition().getY()-1);
+		pos.setCoordonnees(posDepart.getX()-1, posDepart.getY()-1);
 		break;
 	
 	case SUD_OUEST:
-		pos.setCoordonnees(this->getPosition().getX()-1, this->getPosition().getY()+1);
+		pos.setCoordonnees(posDepart.getX()-1, posDepart.getY()+1);
 		break;
 	default:
 		OutputDebugString(L"Direction inconnue !");

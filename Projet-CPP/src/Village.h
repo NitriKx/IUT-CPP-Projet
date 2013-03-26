@@ -2,8 +2,6 @@
 class Village
 {
 private :
-	static unsigned int nourriture;
-	static unsigned int bois;
 
 public:	
 
@@ -11,6 +9,8 @@ public:
 	// CONSTANTES
 	//
 
+	static unsigned int nourriture;
+	static unsigned int bois;
 
 	//
 	// CONSTRCUTEURS

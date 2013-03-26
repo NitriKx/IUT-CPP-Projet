@@ -7,6 +7,14 @@
 
 using namespace std;
 
+enum OCCUPANT {
+	ARBRE,
+	SANGLIER,
+	GAULOIS,
+	GAULOISE,
+	VIDE
+};
+
 class Monde :
 	public vector<Element*>
 {
@@ -33,6 +41,7 @@ public:
 	int getIndexDansListe(Element *e);
 
 	bool isCaseLibre(Position pos);
+	OCCUPANT getTypeOccupant(Position pos);
 
 	void jourSuivant();
 	void initialiserMonde();
