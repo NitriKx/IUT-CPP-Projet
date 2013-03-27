@@ -45,14 +45,25 @@ void Humain::agir() {
 			// On vérifie si il y ades ressource à obtenir	
 			// Si il ya un sanglier sur sa case et que l'homme cherche de la nourriture
 			if(cible == NOURRITURE && monde->getTypeOccupant(nouvellePos) == SANGLIER) {
+				// Si la position existe dans la map
 				if(monde->getCarte().count(nouvellePos) > 0) {
 					Element* aSupprimer = (*monde)[monde->getCarte()[nouvellePos]];
 					Monde::getInstance()->supprimerElement(aSupprimer);
 					Village::recevoirNourriture(Config::sanglier_nourriture_donnee);
 					trouver = true; // on sort de la boucle vu qu'on a attein l'objectif
 				}
+			// On vérifie si il y ades ressource à obtenir	
+			// Si il ya un abre sur sa case et que l'homme cherche de la bois
+			}else if ( cible == BOIS && monde->getTypeOccupant(nouvellePos) == ARBRE){
+				int indiceElement = monde->getCarte()[nouvellePos];
+				Element* aSupprimer = (*monde)[indiceElement];
+				Monde::getInstance()->supprimerElement(aSupprimer);
+				Village::recevoirBois(Config::arbre_bois_donnee);
+				trouver = true;
 			}
-
+			// On consomme des ressources
+			Village::consomerBois;
+			Village::consomerNourriture;
 			// On bouge
 			this->bouger(directionCible);
 
@@ -95,6 +106,12 @@ Position Humain::chercherPlusPres(CIBLE cible) {
 				if(cible == NOURRITURE) {
 					// Si il y a un sanglier
 					if(Monde::getInstance()->getTypeOccupant(curseur) == SANGLIER) {
+						return curseur;
+					}
+				// si l'humain doit trouver du bois
+				}else if(cible == BOIS) {
+					// si il y a un arbres dans la position testée
+					if(Monde::getInstance()->getTypeOccupant(curseur) == ARBRE) {
 						return curseur;
 					}
 				}

@@ -17,13 +17,19 @@ public:
 	// =======================================
 	//				DEPART
 	// =======================================
-	static const int nourriture = 10;
+	static const int nourriture = 300;
 	static const int bois = 20;
-
 	static const int nb_arbres = 2;
-	static const int nb_sanglier = 10;
+	static const int nb_sanglier = 0;
 	static const int nb_gaulois = 1;
 	static const int nb_gauloise = 0;
+
+
+	// =======================================
+	//				CONSOMMATION
+	// =======================================
+	static const int conso_nouriture = 1;
+	static const int conso_bbois = 1;
 
 	// =======================================
 	//				APPARITION
@@ -37,7 +43,7 @@ public:
 	//			 SEUILS ALERTE
 	// =======================================
 
-	static const int alerte_nourriture = 200;
+	static const int alerte_nourriture = 10;
 	static const int alerte_bois = 30;
 
 
@@ -50,6 +56,13 @@ public:
 	static const int sanglier_vision = 1;
 	static const int sanglier_vitesse = 0;
 	static const int sanglier_nourriture_donnee = 5;
+
+
+	// =======================================
+	//				BOIS
+	// =======================================
+
+	static const int arbre_bois_donnee = 5;
 
 
 };
