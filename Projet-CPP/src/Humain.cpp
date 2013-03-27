@@ -31,13 +31,33 @@ void Humain::agir() {
 
 	// On recherche la cible la plus proche
 	Position positionCible = this->chercherPlusPres(cible);
-	// On trouve la direction adapté pour se rendre à la cible la plus proche
-	DIRECTIONS directionCible = this->calculerDirectionPourAllerPosition(positionCible);
-	this->bouger(directionCible);
+	Monde* monde = Monde::getInstance();
+	bool trouver = false;
+	for(int i = 0; i < this->getVitesse() && !trouver; i++) {
+	
+		// On trouve la direction adapté pour se rendre à la cible la plus proche
+		DIRECTIONS directionCible = this->calculerDirectionPourAllerPosition(positionCible);
+		Position nouvellePos = this->calculerNouvelleCoordonnees(this->getPosition(), directionCible);
+	
+		// On vérifie si il y ades ressource à obtenir	
+		// Si il ya un sanglier sur sa case et que l'homme cherche de la nourriture
+		if(cible == NOURRITURE && monde->getTypeOccupant(nouvellePos) == SANGLIER) {
+			if(monde->getCarte().count(nouvellePos) > 0) {
+				Element* aSupprimer = monde->at(monde->getCarte()[nouvellePos]);
+				Monde::getInstance()->supprimerElement(aSupprimer);
+				Village::recevoirNourriture(Config::sanglier_nourriture_donnee);
+				trouver = true; // on sort de la boucle vu qu'on a attein l'objectif
+			}
+		}
+
+		// On bouge
+		this->bouger(directionCible);
+	}
 }
 
 void Humain::bouger(DIRECTIONS direction) {
-	Monde::getInstance()->deplacerElement(this, this->calculerNouvelleCoordonnees(this->getPosition(), direction));
+	Position nouvellePos = this->calculerNouvelleCoordonnees(this->getPosition(), direction);
+	Monde::getInstance()->deplacerElement(this, nouvellePos);
 }
 
 
@@ -46,30 +66,25 @@ Position Humain::chercherPlusPres(CIBLE cible) {
 
 	DIRECTIONS ordreParcours[6] = {SUD_EST, SUD, SUD_OUEST, NORD_OUEST, NORD, NORD_EST};
 
-	// On récupère les milliseconde, secondes et minutes actuelles pour avoir un nombre vraiment aléatoire
-	SYSTEMTIME st;
-	GetSystemTime(&st);
-	std::srand(st.wMinute * 1000 * 60 + st.wSecond*1000 + st.wMilliseconds);
-
 	Position centre = this->getPosition();
 
 	// On cherche dans les "cercle" du plus près au plus loin (jusqu'à la vision maximale).
-	for(unsigned int i = 0; i < this->getVision(); i++) {
+	for(unsigned int i = 1; i < this->getVision()+1; i++) {
 
 		Position curseur = centre;
 
 		// Au fur et à mesure que l'on s'éloigne du point d'origine, un observe des "cercles" à 6 côtés
-		// chaque côté étant de i+2 cases.
+		// chaque côté étant de (vision-1)+2 cases.
 		// REMARQUE - Cette technique est peu optimisé vu qu'on l'on teste certaines cases plusieurs fois
 
 		// Case la plus au nord
-		curseur = Position(centre.getX(), centre.getY()+(2*i));
+		curseur = Position(centre.getX(), centre.getY()-(2*i));
 
 		// On parcours les "directions". Toute les i+2 cases on change de direction
 		for(unsigned int j = 0; j < 6; j++) {
 
 			// On parcourt les cases du coté en cours (on fait pour la case "départ" mais pas pour la case "fin")
-			for(unsigned int k = 1; k < 2+i; k++) {
+			for(unsigned int k = 1; k < 2+i-1; k++) {
 				
 				// Si l'humain doit trouver de la nourriture
 				if(cible == NOURRITURE) {

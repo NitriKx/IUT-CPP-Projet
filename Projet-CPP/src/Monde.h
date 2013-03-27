@@ -34,7 +34,9 @@ public:
 	map<Position, unsigned int>& getCarte();
 
 	bool supprimerElement(Element*) ;
+
 	void ajouterElement(Position pos, Element* e);
+	void ajouterElementPositionAleatoireEtVide(Element *e);
 
 	void deplacerElement(Element *e, Position nouvellePos);
 

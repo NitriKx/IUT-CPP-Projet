@@ -38,7 +38,7 @@ void AffichageMap::affichageMap()
 		textcolor(e->getCouleur());
 		cout << e->getAffich();
 	}
-		
+	
 }
 
 void AffichageMap::viderInterieurGrille() {

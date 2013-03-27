@@ -39,6 +39,27 @@ bool Monde::supprimerElement(Element* e) {
 	return this->carte.erase(e->getPosition()) > 0;
 }
 
+void Monde::ajouterElementPositionAleatoireEtVide(Element *e) {
+
+	Position pos(-1, -1);
+	int i = 0;
+	int max = Config::dimentions.first *  Config::dimentions.second;
+
+	do {
+		pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		i++;
+	} while (Monde::getInstance()->isCaseLibre(pos) == false && i < max) ;
+
+	// Si la grille est pleine
+	if(i >= max) {
+		OutputDebugString(L"Grille pleine !");
+	}
+	// Si la position a été trouvée
+	else {
+		Monde::getInstance()->ajouterElement(pos, e);
+	}
+}
+
 // Ajout l'élément au monde
 // Doit être placé plus tard
 void Monde::ajouterElement(Position pos, Element* e) {
@@ -143,8 +164,6 @@ Monde* Monde::getInstance() {
 
 
 void Monde::initialiserMonde() {
-
-	std::srand((unsigned int) time(0));
 
 	// On ajoute les arbres
 	for(int i = 0; i < Config::nb_arbres; i++) {

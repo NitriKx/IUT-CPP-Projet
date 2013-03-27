@@ -23,19 +23,19 @@ public:
 	//
 	// METHODES
 	//
-	void consomerBois(unsigned int _bois);
-	void consomerNourriture(unsigned int _nourriture);
-	void recevoirBois(unsigned int _bois);
-	void recevoirNourriture(unsigned int _nourriture);
+	void static consomerBois(unsigned int _bois);
+	void static consomerNourriture(unsigned int _nourriture);
+	void static recevoirBois(unsigned int _bois);
+	void static recevoirNourriture(unsigned int _nourriture);
 	//
 	// GETTERS ET SETTERS
 	//
 
-	unsigned int getBois();
-	unsigned int getNourriture();
+	unsigned int static getBois();
+	unsigned int static getNourriture();
 
-	void setBois(unsigned int _bois);
-	void setNourriture(unsigned int _nourriture);
+	void static setBois(unsigned int _bois);
+	void static setNourriture(unsigned int _nourriture);
 	
 }; 
 

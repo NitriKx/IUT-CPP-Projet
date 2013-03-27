@@ -65,11 +65,6 @@ void Mobile::bouge(void)
 	Position nouvellePos(this->getPosition());
 	int i = 0;
 
-	// On récupère les milliseconde, secondes et minutes actuelles pour avoir un nombre vraiment aléatoire
-	SYSTEMTIME st;
-	GetSystemTime(&st);
-	std::srand(st.wMinute * 1000 * 60 + st.wSecond*1000 + st.wMilliseconds);
-
 	// On tire une direction au hasard entre 0 et 5
 	int rand = std::rand() % 6;
 

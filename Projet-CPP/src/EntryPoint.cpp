@@ -19,6 +19,14 @@ int main()
 	// ================================
 	//				TESTS
 	// ================================
+
+	// On initialise la graine
+	if(Config::seed < 0) {
+		std::srand((unsigned int) time(0));
+	} 
+	else {
+		std::srand(Config::seed);
+	}
 	
 	Monde *monde = Monde::getInstance();
 	monde->initialiserMonde();

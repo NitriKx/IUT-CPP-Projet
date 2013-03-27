@@ -1,7 +1,8 @@
 #include "Village.h"
+#include "Config.h"
 
-unsigned int Village::bois = 40;
-unsigned int Village::nourriture = 50;
+unsigned int Village::bois = Config::bois;
+unsigned int Village::nourriture = Config::nourriture;
 
 Village::Village(void)
 {
@@ -14,12 +15,12 @@ Village::~Village(void)
 
 unsigned int Village::getBois()
 {
-	return nourriture;
+	return Village::nourriture;
 }
 
 unsigned int Village::getNourriture()
 {
-	return bois;
+	return Village::bois;
 }
 
 void Village::setBois(unsigned int _bois)
