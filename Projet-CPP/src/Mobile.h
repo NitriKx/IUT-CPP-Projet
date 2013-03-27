@@ -3,6 +3,7 @@
 
 enum DIRECTIONS 
 {
+	IMMOBILE = -1,
 	NORD = 0,
 	SUD = 1,
 	NORD_OUEST = 2,

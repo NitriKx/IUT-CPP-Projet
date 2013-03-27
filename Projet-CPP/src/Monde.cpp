@@ -1,3 +1,4 @@
+
 #include "Monde.h"
 #include "Config.h"
 #include "Mobile.h"
@@ -7,7 +8,10 @@
 #include "Gauloise.h"
 #include "Village.h"
 
-Monde::Monde(void) : vector<Element*>()
+#include <iostream>
+#include <algorithm>
+
+Monde::Monde(void) : vector<Element*>(), compteurCompactage(0)
 {
 }
 
@@ -35,8 +39,41 @@ bool Monde::supprimerElement(Element* e) {
 		return false;
 	}
 
-	this->erase(this->begin() + indexElement);
-	return this->carte.erase(e->getPosition()) > 0;
+	// On met l'élément à NULL dans le vecteur
+	std::replace(this->begin(), this->end(), e, (Element*) NULL);
+	// On le supprime de la map
+	this->carte.erase(e->getPosition());
+
+	compteurCompactage++;
+	
+	if(compteurCompactage == Config::frequence_compactage_map) {
+
+		OutputDebugString(L"Compactage !");
+
+		vector<Element *> *nouvelleListe = new vector<Element *>();
+
+		// On créer une nouvelle liste
+		for(unsigned int i = 0; i < this->size(); i++) {
+			if((*this)[i] != NULL) {
+				nouvelleListe->push_back((*this)[i]);
+			}
+		}
+
+		// On met la liste compactée
+		this->swap(*nouvelleListe);
+		delete nouvelleListe;
+
+		// On récréer toute la map
+		this->carte.clear();
+		for(unsigned int i = 0; i < this->size(); i++) {
+			Element* t = (*this)[i];
+			this->carte[t->getPosition()] = i;
+		}
+
+		compteurCompactage = 0;
+	}
+
+	return true;
 }
 
 void Monde::ajouterElementPositionAleatoireEtVide(Element *e) {
@@ -138,7 +175,8 @@ void Monde::jourSuivant()
 	for(unsigned int i = 0; i < this->size(); i++)
 	{
 		try {
-		
+			if(this->at(i) == NULL)
+				continue;
 			if(typeid(*this->at(i)) == typeid(Gaulois))
 				dynamic_cast<Gaulois *>(this->at(i))-> Gaulois::agir();
 			if(typeid(*this->at(i)) == typeid(Gauloise))

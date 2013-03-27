@@ -11,6 +11,8 @@ public:
 
 	// La graine d'aléatoire
 	static const int seed = -1;
+
+	static const int frequence_compactage_map = 2;
 	
 	// =======================================
 	//				DEPART
@@ -35,7 +37,7 @@ public:
 	//			 SEUILS ALERTE
 	// =======================================
 
-	static const int alerte_nourriture = 30;
+	static const int alerte_nourriture = 200;
 	static const int alerte_bois = 30;
 
 

@@ -24,7 +24,7 @@ private:
 	// CONSTANTES
 	//
 	map<Position, unsigned int> carte;
-
+	int compteurCompactage;
 	static Monde *_instance;
 
 	Monde(void);

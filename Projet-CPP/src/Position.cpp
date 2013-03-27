@@ -119,3 +119,7 @@ Position& Position::operator=(const Position &pos) {
 bool Position::operator==(Position pos) {
 	return this->x == pos.x && this->y == pos.y;
 }
+
+bool Position::operator!=(Position pos) {
+	return this->x != pos.x || this->y != pos.y;
+}

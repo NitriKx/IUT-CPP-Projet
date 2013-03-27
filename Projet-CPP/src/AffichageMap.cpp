@@ -34,9 +34,11 @@ void AffichageMap::affichageMap()
 	for(j=0;j<(*monMonde).size();j++)
 	{
 		Element *e = monMonde->at(j);
-		gotoxy(e->getPosition().getX()+1,e->getPosition().getY()+1);
-		textcolor(e->getCouleur());
-		cout << e->getAffich();
+		if(e != NULL) {
+			gotoxy(e->getPosition().getX()+1,e->getPosition().getY()+1);
+			textcolor(e->getCouleur());
+			cout << e->getAffich();
+		}
 	}
 	
 }

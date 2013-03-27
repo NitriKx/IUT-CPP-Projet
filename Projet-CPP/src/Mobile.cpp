@@ -128,6 +128,9 @@ Position Mobile::calculerNouvelleCoordonnees(Position posDepart, DIRECTIONS dire
 	case SUD_OUEST:
 		pos.setCoordonnees(posDepart.getX()-1, posDepart.getY()+1);
 		break;
+	case IMMOBILE:
+		pos.setCoordonnees(posDepart.getX(), posDepart.getY());
+		break;
 	default:
 		OutputDebugString(L"Direction inconnue !");
 	break;

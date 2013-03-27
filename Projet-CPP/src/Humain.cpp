@@ -33,25 +33,30 @@ void Humain::agir() {
 	Position positionCible = this->chercherPlusPres(cible);
 	Monde* monde = Monde::getInstance();
 	bool trouver = false;
-	for(int i = 0; i < this->getVitesse() && !trouver; i++) {
+	for(unsigned int i = 0; i < this->getVitesse() && !trouver; i++) {
 	
 		// On trouve la direction adapté pour se rendre à la cible la plus proche
 		DIRECTIONS directionCible = this->calculerDirectionPourAllerPosition(positionCible);
 		Position nouvellePos = this->calculerNouvelleCoordonnees(this->getPosition(), directionCible);
-	
-		// On vérifie si il y ades ressource à obtenir	
-		// Si il ya un sanglier sur sa case et que l'homme cherche de la nourriture
-		if(cible == NOURRITURE && monde->getTypeOccupant(nouvellePos) == SANGLIER) {
-			if(monde->getCarte().count(nouvellePos) > 0) {
-				Element* aSupprimer = monde->at(monde->getCarte()[nouvellePos]);
-				Monde::getInstance()->supprimerElement(aSupprimer);
-				Village::recevoirNourriture(Config::sanglier_nourriture_donnee);
-				trouver = true; // on sort de la boucle vu qu'on a attein l'objectif
-			}
-		}
+		
+		// Si la position sur laquelle on est , n'est pas déjà la bonne
+		if(nouvellePos != this->getPosition()) {
 
-		// On bouge
-		this->bouger(directionCible);
+			// On vérifie si il y ades ressource à obtenir	
+			// Si il ya un sanglier sur sa case et que l'homme cherche de la nourriture
+			if(cible == NOURRITURE && monde->getTypeOccupant(nouvellePos) == SANGLIER) {
+				if(monde->getCarte().count(nouvellePos) > 0) {
+					Element* aSupprimer = (*monde)[monde->getCarte()[nouvellePos]];
+					Monde::getInstance()->supprimerElement(aSupprimer);
+					Village::recevoirNourriture(Config::sanglier_nourriture_donnee);
+					trouver = true; // on sort de la boucle vu qu'on a attein l'objectif
+				}
+			}
+
+			// On bouge
+			this->bouger(directionCible);
+
+		}
 	}
 }
 
@@ -118,13 +123,13 @@ Position Humain::chercherPlusPres(CIBLE cible) {
 DIRECTIONS Humain::calculerDirectionPourAllerPosition(Position pos) {
 	Position current = this->getPosition();
 
-	// Case courante
-	if(current.getX() == pos.getX() && current.getY() == pos.getY()) {
-		throw new string("Le mobile est déjà sur la case !");
-	}
-
 	int xdiff = pos.getX() - current.getX();
 	int ydiff = pos.getY() - current.getY();
+
+	// Déjà sur la bonne case ?
+	if(xdiff == 0 && ydiff == 0) {
+		return IMMOBILE;
+	}
 
 	// SUD
 	if(ydiff > 0 && xdiff == 0) {
