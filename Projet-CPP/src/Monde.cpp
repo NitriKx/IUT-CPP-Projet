@@ -228,6 +228,11 @@ void Monde::initialiserMonde() {
 		this->ajouterElement(pos, new Gaulois("", pos, 20, 5, 3, 2, 3));
 	}
 
+	for(int i = 0; i < Config::nb_arbres;i++) {
+		Position pos = Position::random(Config::dimentions.first, Config::dimentions.second);
+		this->ajouterElement(pos, new Arbre("",pos));
+	}
+
 	Village::nourriture = Config::nourriture;
 	Village::bois = Config::bois;
 }

@@ -20,7 +20,7 @@ public:
 	static const int nourriture = 10;
 	static const int bois = 20;
 
-	static const int nb_arbres = 0;
+	static const int nb_arbres = 2;
 	static const int nb_sanglier = 10;
 	static const int nb_gaulois = 1;
 	static const int nb_gauloise = 0;
