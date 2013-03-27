@@ -17,9 +17,8 @@ public:
 	Sanglier(string nom, Position pos);
 	~Sanglier(void);
 
-	// using Mobile::agir;
+	using Mobile::agir;
 
-	void agir();
 
 	//
 	// CONSTANTES

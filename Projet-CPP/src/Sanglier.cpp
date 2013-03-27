@@ -28,9 +28,6 @@ Sanglier::~Sanglier(void)
 {
 }
 
-void Sanglier::agir() 
-{
-}
 
 // ***************************
 //
