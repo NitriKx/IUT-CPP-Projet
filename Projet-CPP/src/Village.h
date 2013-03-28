@@ -23,8 +23,10 @@ public:
 	//
 	// METHODES
 	//
-	void static consomerBois(unsigned int _bois);
-	void static consomerNourriture(unsigned int _nourriture);
+	void static consomerBois(int _bois);
+	void static consomerBois();
+	void static consomerNourriture();
+	void static consomerNourriture( int _nourriture);
 	void static recevoirBois(unsigned int _bois);
 	void static recevoirNourriture(unsigned int _nourriture);
 	//
