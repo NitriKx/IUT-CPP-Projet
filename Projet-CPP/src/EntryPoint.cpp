@@ -7,6 +7,7 @@
 #include "Arbre.h"
 #include "Gaulois.h"
 #include "Gauloise.h"
+#include "Village.h"
 
 #include <string>
 #include <iostream>

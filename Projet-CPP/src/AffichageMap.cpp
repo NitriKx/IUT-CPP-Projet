@@ -1,6 +1,7 @@
 #include "AffichageMap.h"
 #include "Config.h"
 #include "econio.h"
+#include "Village.h"
 
 
 AffichageMap::AffichageMap(void)
@@ -77,4 +78,11 @@ void AffichageMap::dessinerGrille() {
 		gotoxy(Config::dimentions.first+1, i);
 		cout << "=";
 	}
+
+	//affichage des stocks bois
+	gotoxy(Config::dimentions.first+10,0);
+	cout << "Stock de bois :" << Village::bois;
+	//affichage des stock nourriture
+	gotoxy(Config::dimentions.first+10,2);
+	cout << "Stock de nourriture :" << Village::nourriture;
 }

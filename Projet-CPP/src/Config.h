@@ -18,7 +18,7 @@ public:
 	//				DEPART
 	// =======================================
 	static const int nourriture = 300;
-	static const int bois = 20;
+	static const int bois = 10;
 	static const int nb_arbres = 2;
 	static const int nb_sanglier = 0;
 	static const int nb_gaulois = 1;
@@ -29,7 +29,7 @@ public:
 	//				CONSOMMATION
 	// =======================================
 	static const int conso_nouriture = 1;
-	static const int conso_bbois = 1;
+	static const int conso_bois = 1;
 
 	// =======================================
 	//				APPARITION

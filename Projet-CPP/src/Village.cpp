@@ -33,13 +33,29 @@ void Village::setNourriture(unsigned int _nourriture)
 	 nourriture = _nourriture;
 }
 
-void Village::consomerBois(unsigned int _bois)
+void Village::consomerBois(int _bois)
 {
+	if( ((int) Village::bois) - _bois >= 0 )
+	{
 		Village::bois -= _bois;
+	}
 }
-void Village::consomerNourriture(unsigned int _nourriture)
+
+void Village::consomerBois()
 {
+	Village::consomerBois(Config::conso_bois);
+}
+void Village::consomerNourriture( int _nourriture)
+{
+	if( Village::nourriture - _nourriture >= 0 )
+	{
 		Village::nourriture -= _nourriture;
+	}
+	
+}
+void Village::consomerNourriture()
+{
+	Village::consomerNourriture(Config::conso_nouriture);
 }
 
 void Village::recevoirBois(unsigned int _bois)

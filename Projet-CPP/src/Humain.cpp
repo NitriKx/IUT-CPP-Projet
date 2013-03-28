@@ -62,8 +62,8 @@ void Humain::agir() {
 				trouver = true;
 			}
 			// On consomme des ressources
-			Village::consomerBois;
-			Village::consomerNourriture;
+			Village::consomerBois();
+			Village::consomerNourriture();
 			// On bouge
 			this->bouger(directionCible);
 
