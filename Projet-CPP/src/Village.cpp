@@ -35,7 +35,7 @@ void Village::setNourriture(unsigned int _nourriture)
 
 void Village::consomerBois(int _bois)
 {
-	if( ((int) Village::bois) - _bois >= 0 )
+	if( ((int) Village::bois) - _bois >= 0 ) //erreur à cause du unsigned
 	{
 		Village::bois -= _bois;
 	}
@@ -47,7 +47,7 @@ void Village::consomerBois()
 }
 void Village::consomerNourriture( int _nourriture)
 {
-	if( Village::nourriture - _nourriture >= 0 )
+	if( Village::nourriture - _nourriture >= 0 ) //erreur à cause du unsigned
 	{
 		Village::nourriture -= _nourriture;
 	}

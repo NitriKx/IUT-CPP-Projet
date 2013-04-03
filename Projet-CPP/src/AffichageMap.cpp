@@ -85,4 +85,8 @@ void AffichageMap::dessinerGrille() {
 	//affichage des stock nourriture
 	gotoxy(Config::dimentions.first+10,2);
 	cout << "Stock de nourriture :" << Village::nourriture;
+	//affichage du nombre de gaulois
+	/**gotoxy(Config::dimentions.first+10,3);
+	monMonde->**/
+	//affichage du nombre de sanglier
 }
